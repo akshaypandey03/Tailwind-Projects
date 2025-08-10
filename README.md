@@ -2,9 +2,6 @@
 
 A modern, responsive frontend project built using **Tailwind CSS**.
 
-## Demo
-
-[Add your live demo link here, if any]
 
 ## Features
 
