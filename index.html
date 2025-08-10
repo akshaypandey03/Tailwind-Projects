@@ -1,0 +1,397 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<!-- <canvas id="three-banner"></canvas> -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+
+ <body class="bg-gray-100">
+
+  <nav class="bg-gray-800 text-white px-4 py-3 flex items-center justify-between">
+    <div class="text-xl font-bold">MySite</div>
+    <div class="lg:hidden">
+      <button onclick="toggleMenu()" class="text-white text-2xl focus:outline-none">
+        &#9776;
+      </button>
+    </div>
+    <div id="navLinks" class="hidden lg:flex space-x-6">
+      <a href="#" class="hover:text-gray-300">Home</a>
+      <a href="#" class="hover:text-gray-300">About</a>
+      <a href="#" class="hover:text-gray-300">Services</a>
+      <a href="#" class="hover:text-gray-300">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="lg:hidden hidden flex-col bg-gray-800 text-white px-4 py-2 space-y-2">
+    <a href="#" class="block hover:text-gray-300">Home</a>
+    <a href="#" class="block hover:text-gray-300">About</a>
+    <a href="#" class="block hover:text-gray-300">Services</a>
+    <a href="#" class="block hover:text-gray-300">Contact</a>
+  </div>
+<!-- hero section -->
+
+<section class="relative h-[80vh] overflow-hidden">
+  <!-- 3D Canvas Background -->
+  <canvas id="web-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
+
+  <!-- Overlay Content -->
+  <div class="relative z-10 h-full flex items-center justify-center text-white bg-black/40">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to MySite</h1>
+      <p class="text-lg md:text-xl mb-6">Your trusted partner for amazing web development solutions.</p>
+      <a href="#services"
+         class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-lg transition">
+        Explore Services
+      </a>
+    </div>
+  </div>
+</section>
+
+   <!-- <section class="bg-cover bg-center h-[80vh] flex items-center justify-center text-white"
+           style="background-image: url('https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg');">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to MySite</h1>
+      <p class="text-lg md:text-xl mb-6">Your trusted place for amazing content and services.</p>
+      <a href="#"
+         class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-lg transition">
+        Get Started
+      </a>
+    </div>
+  </section> -->
+
+   <section class="py-16 px-6 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Our Web Development Services</h2>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <!-- Card 1 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+        <p class="text-gray-600 mb-4">Modern, responsive, and interactive interfaces using HTML, CSS, JavaScript, React, Vue, etc.</p>
+        <a href="#" class="text-blue-600 hover:underline font-medium">Learn More</a>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+        <p class="text-gray-600 mb-4">Modern, responsive, and interactive interfaces using HTML, CSS, JavaScript, React, Vue, etc.</p>
+        <a href="#" class="text-blue-600 hover:underline font-medium">Learn More</a>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+        <p class="text-gray-600 mb-4">Modern, responsive, and interactive interfaces using HTML, CSS, JavaScript, React, Vue, etc.</p>
+        <a href="#" class="text-blue-600 hover:underline font-medium">Learn More</a>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+        <p class="text-gray-600 mb-4">Modern, responsive, and interactive interfaces using HTML, CSS, JavaScript, React, Vue, etc.</p>
+        <a href="#" class="text-blue-600 hover:underline font-medium">Learn More</a>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+        <p class="text-gray-600 mb-4">Modern, responsive, and interactive interfaces using HTML, CSS, JavaScript, React, Vue, etc.</p>
+        <a href="#" class="text-blue-600 hover:underline font-medium">Learn More</a>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+        <p class="text-gray-600 mb-4">Modern, responsive, and interactive interfaces using HTML, CSS, JavaScript, React, Vue, etc.</p>
+        <a href="#" class="text-blue-600 hover:underline font-medium">Learn More</a>
+      </div>
+    </div>              
+    </section> 
+
+    <!-- Why Choose Us Section -->
+<section class="py-16 px-6 bg-gray-50">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Why Choose Us</h2>
+    <p class="text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+      We combine design, technology, and strategy to create digital experiences that help your business grow. Here’s why clients love working with us:
+    </p>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Reason 1 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Expert Developers</h3>
+        <p class="text-gray-600">Our team consists of highly skilled developers with experience in modern web technologies and frameworks.</p>
+      </div>
+
+      <!-- Reason 2 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Client-Centric Approach</h3>
+        <p class="text-gray-600">We listen to your needs and tailor solutions that align with your goals, ensuring complete satisfaction.</p>
+      </div>
+
+      <!-- Reason 3 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">On-Time Delivery</h3>
+        <p class="text-gray-600">We understand the importance of deadlines and deliver your project on time without compromising quality.</p>
+      </div>
+
+      <!-- Reason 4 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Affordable Pricing</h3>
+        <p class="text-gray-600">High-quality web development doesn’t have to be expensive. We offer competitive and transparent pricing.</p>
+      </div>
+
+      <!-- Reason 5 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Ongoing Support</h3>
+        <p class="text-gray-600">From bug fixes to performance optimization, we’re here to support you long after launch.</p>
+      </div>
+
+      <!-- Reason 6 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Proven Track Record</h3>
+        <p class="text-gray-600">We’ve built successful websites and apps for startups, small businesses, and large enterprises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-16 px-6 bg-white">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-10">What Our Clients Say</h2>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Testimonial 1 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <p class="text-gray-700 italic mb-4">"The team delivered a stunning website that exceeded our expectations. Fast, professional, and creative!"</p>
+        <div class="flex items-center gap-4">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-12 h-12 rounded-full">
+          <div class="text-left">
+            <p class="font-semibold text-gray-800">Priya Mehra</p>
+            <p class="text-sm text-gray-500">Founder, GreenLeaf</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <p class="text-gray-700 italic mb-4">"They handled everything from design to deployment. I highly recommend their full-stack services."</p>
+        <div class="flex items-center gap-4">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full">
+          <div class="text-left">
+            <p class="font-semibold text-gray-800">Rakesh Kumar</p>
+            <p class="text-sm text-gray-500">CEO, ShopNow</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <p class="text-gray-700 italic mb-4">"Their attention to detail and support after launch made them the right choice for our web app."</p>
+        <div class="flex items-center gap-4">
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Client" class="w-12 h-12 rounded-full">
+          <div class="text-left">
+            <p class="font-semibold text-gray-800">Ankit Sharma</p>
+            <p class="text-sm text-gray-500">Product Manager, FitTrack</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-10 mt-16">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Brand Info -->
+    <div>
+      <h3 class="text-xl font-bold mb-3">MySite</h3>
+      <p class="text-gray-400 text-sm">Building modern, high-performance web experiences tailored to your business goals.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-gray-400">
+        <li><a href="#" class="hover:text-white transition">Home</a></li>
+        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+        <li><a href="#about" class="hover:text-white transition">Why Choose Us</a></li>
+        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+      <div class="flex space-x-4">
+        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Facebook">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.8h2.5l-.4 3h-2.1v7A10 10 0 0022 12z"/></svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Twitter">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.25 4.25 0 001.88-2.34 8.4 8.4 0 01-2.7 1.03 4.2 4.2 0 00-7.1 3.83A11.92 11.92 0 013 4.8a4.2 4.2 0 001.3 5.6 4.14 4.14 0 01-1.9-.52v.05a4.2 4.2 0 003.4 4.1 4.2 4.2 0 01-1.9.07 4.2 4.2 0 003.9 2.9A8.45 8.45 0 012 19.5a11.87 11.87 0 006.4 1.9c7.7 0 11.9-6.3 11.9-11.8v-.5A8.4 8.4 0 0022.5 6z"/></svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.45 20.45H17.5v-5.4c0-1.3 0-3-1.85-3s-2.1 1.4-2.1 2.9v5.5h-2.9V9h2.8v1.6h.04a3.1 3.1 0 012.8-1.5c3 0 3.5 2 3.5 4.5v6.9zM5.3 7.4a1.65 1.65 0 01-1.7-1.7c0-.9.75-1.7 1.7-1.7a1.7 1.7 0 110 3.4zm1.5 13H3.8V9h3V20.4zM22 0H2C.9 0 0 .9 0 2v20c0 1.1.9 2 2 2h20a2 2 0 002-2V2c0-1.1-.9-2-2-2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="text-center text-sm text-gray-400 mt-8">
+    &copy; 2025 MySite. All rights reserved.
+  </div>
+</footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+<script>
+  const canvas = document.getElementById("web-canvas");
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    1,
+    1000
+  );
+  camera.position.z = 200;
+
+  const numPoints = 150;
+  const spreadRadius = 400;
+  const connectionDistance = 60;
+
+  const points = [];
+  const velocities = [];
+
+  for (let i = 0; i < numPoints; i++) {
+    const point = new THREE.Vector3(
+      (Math.random() - 0.5) * spreadRadius,
+      (Math.random() - 0.5) * spreadRadius,
+      (Math.random() - 0.5) * spreadRadius
+    );
+    points.push(point);
+    velocities.push(new THREE.Vector3(
+      (Math.random() - 0.5) * 0.4,
+      (Math.random() - 0.5) * 0.4,
+      (Math.random() - 0.5) * 0.4
+    ));
+  }
+
+  const pointGeometry = new THREE.BufferGeometry().setFromPoints(points);
+  const pointMaterial = new THREE.PointsMaterial({
+    color: 0x00ffff,
+    size: 1.2,
+  });
+  const pointMesh = new THREE.Points(pointGeometry, pointMaterial);
+  scene.add(pointMesh);
+
+  const lineMaterial = new THREE.LineBasicMaterial({
+    color: 0x00ffff,
+    transparent: true,
+    opacity: 0.15,
+  });
+  const lineGroup = new THREE.Group();
+  scene.add(lineGroup);
+
+  function updatePoints() {
+    for (let i = 0; i < points.length; i++) {
+      points[i].add(velocities[i]);
+
+      ['x', 'y', 'z'].forEach(axis => {
+        if (Math.abs(points[i][axis]) > spreadRadius / 2) {
+          velocities[i][axis] *= -1;
+        }
+      });
+    }
+    pointGeometry.setFromPoints(points);
+  }
+
+  function updateLines() {
+    while (lineGroup.children.length) {
+      lineGroup.remove(lineGroup.children[0]);
+    }
+
+    for (let i = 0; i < numPoints; i++) {
+      for (let j = i + 1; j < numPoints; j++) {
+        const dist = points[i].distanceTo(points[j]);
+        if (dist < connectionDistance) {
+          const geo = new THREE.BufferGeometry().setFromPoints([
+            points[i],
+            points[j],
+          ]);
+          const opacity = 1 - dist / connectionDistance;
+          const line = new THREE.Line(
+            geo,
+            lineMaterial.clone()
+          );
+          line.material.opacity = opacity * 0.25;
+          lineGroup.add(line);
+        }
+      }
+    }
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    updatePoints();
+    updateLines();
+    scene.rotation.y += 0.0005;
+    scene.rotation.x += 0.0003;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener("resize", () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  });
+</script>  
+
+  <!-- <script>
+  
+const canvas = document.getElementById('three-banner');
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+camera.position.z = 3;
+
+const geometry = new THREE.IcosahedronGeometry(1, 1);
+const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, wireframe: true });
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
+const light = new THREE.PointLight(0xffffff, 1, 100);
+light.position.set(10, 10, 10);
+scene.add(light);
+
+function animate() {
+  requestAnimationFrame(animate);
+  mesh.rotation.x += 0.01;
+  mesh.rotation.y += 0.01;
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+});
+
+
+</script> -->
+</body>
+</html>
